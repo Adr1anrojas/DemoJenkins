@@ -30,7 +30,7 @@ namespace APIdemo
                 options.AddDefaultPolicy(
                     builder =>
                     {
-                        builder.WithOrigins("http://localhost:4200");
+                        builder.WithOrigins("http://localhost:8086");
                     });
             });
             services.AddControllers();
