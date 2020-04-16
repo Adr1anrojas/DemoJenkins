@@ -5,7 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class WeatherForecastService {
-  url = 'https://localhost:44355/weatherforecast'
+  url = 'https://localhost:4201/weatherforecast'
   constructor(private http: HttpClient) { }
 
   getAll() {
