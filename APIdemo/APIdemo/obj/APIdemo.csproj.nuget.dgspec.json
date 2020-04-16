@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Projects\\Jenkins\\APIdemo\\APIdemo\\APIdemo.csproj": {}
+    "C:\\Projects\\Jenkins\\DemoJenkins\\APIdemo\\APIdemo\\APIdemo.csproj": {}
   },
   "projects": {
-    "C:\\Projects\\Jenkins\\APIdemo\\APIdemo\\APIdemo.csproj": {
+    "C:\\Projects\\Jenkins\\DemoJenkins\\APIdemo\\APIdemo\\APIdemo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Projects\\Jenkins\\APIdemo\\APIdemo\\APIdemo.csproj",
+        "projectUniqueName": "C:\\Projects\\Jenkins\\DemoJenkins\\APIdemo\\APIdemo\\APIdemo.csproj",
         "projectName": "APIdemo",
-        "projectPath": "C:\\Projects\\Jenkins\\APIdemo\\APIdemo\\APIdemo.csproj",
+        "projectPath": "C:\\Projects\\Jenkins\\DemoJenkins\\APIdemo\\APIdemo\\APIdemo.csproj",
         "packagesPath": "C:\\Users\\e-aarojas\\.nuget\\packages\\",
-        "outputPath": "C:\\Projects\\Jenkins\\APIdemo\\APIdemo\\obj\\",
+        "outputPath": "C:\\Projects\\Jenkins\\DemoJenkins\\APIdemo\\APIdemo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -40,6 +40,16 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "NEST": {
+              "target": "Package",
+              "version": "[7.6.1, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
