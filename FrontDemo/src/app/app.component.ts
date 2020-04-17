@@ -12,7 +12,7 @@ export class AppComponent implements OnInit {
   title = 'FrontDemoPush2';
   constructor(private service: WeatherForecastService) {
     this.service.getAll().subscribe((res: WeatherForecast[]) => { console.log(res); this.items = res });
-    console.log("asdasd");
+    console.log("test");
 
   }
   ngOnInit(): void {
