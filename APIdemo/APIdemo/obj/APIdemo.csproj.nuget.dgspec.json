@@ -41,9 +41,9 @@
       "frameworks": {
         "netcoreapp3.1": {
           "dependencies": {
-            "NEST": {
+            "Microsoft.AspNetCore.Mvc.Cors": {
               "target": "Package",
-              "version": "[7.6.1, )"
+              "version": "[2.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
