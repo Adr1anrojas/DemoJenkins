@@ -27,16 +27,13 @@ namespace APIdemo
         {
             services.AddCors(options =>
             {
-                options.AddDefaultPolicy(
-                    builder =>
-                    {
-                        builder.WithOrigins("http://localhost:8086")
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.WithOrigins("http://localhost:4200")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials();
-                    });
+                    .AllowCredentials());
             });
-            services.AddControllers();
+        services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -51,7 +48,6 @@ namespace APIdemo
 
             app.UseRouting();
 
-            app.UseCors();
 
             app.UseAuthorization();
 
