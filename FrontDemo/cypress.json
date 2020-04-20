@@ -4,4 +4,4 @@
     "mochaFile": "cypress-report.xml",
     "toConsole": true
   }
-}	
+}

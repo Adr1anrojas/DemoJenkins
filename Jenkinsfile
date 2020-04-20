@@ -34,7 +34,9 @@ pipeline {
     }
 	post {
 		always {
-			junit 'results/cypress-report.xml'
+			dir("FrontDemo"){
+				junit 'cypress-report.xml'
+			}
 		}
 	}
 }
