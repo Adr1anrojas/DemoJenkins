@@ -1,0 +1,32 @@
+pipeline {
+    agent any
+
+    tools {nodejs "node"}
+
+    environment {
+        CHROME_BIN = '/bin/google-chrome'
+    }
+
+    stages {
+        stage('Install Dependencies') {
+            steps {
+                sh 'npm i'
+            }
+        }
+        stage('Build Angular Proyect') {
+            steps {
+                sh 'npm run build'
+            }
+        }
+        stage('Cypress tests') {
+            steps {
+                sh 'npm run open'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+            }
+        }
+    }
+}
