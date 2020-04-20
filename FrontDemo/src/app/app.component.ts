@@ -9,10 +9,10 @@ import { WeatherForecast } from './models/weatherForecast';
 })
 export class AppComponent implements OnInit {
   items: WeatherForecast[] = [];
-  title = 'FrontDemo2';
+  title = 'FrontDemoPush4';
   constructor(private service: WeatherForecastService) {
     this.service.getAll().subscribe((res: WeatherForecast[]) => { console.log(res); this.items = res });
-    console.log("asdasd");
+    console.log("test");
 
   }
   ngOnInit(): void {
