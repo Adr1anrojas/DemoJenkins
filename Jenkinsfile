@@ -22,7 +22,7 @@ pipeline {
         stage('Cypress tests') {
             steps {
 				dir("FrontDemo"){
-					bat 'npm run open'
+					bat 'npm run cypress:ci'
 				}
             }
         }
