@@ -11,21 +11,21 @@ pipeline {
         stage('Install Dependencies') {
             steps {
 				dir("FrontDemo"){
-					sh 'npm install'
+					bat 'npm install'
 				}
             }
         }
         stage('Build Angular Proyect') {
             steps {
 				dir("FrontDemo"){
-					sh 'npm run build'
+					bat 'npm run build'
 				}
             }
         }
         stage('Cypress tests') {
             steps {
 				dir("FrontDemo"){
-				sh 'npm run open'
+					bat 'npm run open'
 				}
             }
         }
