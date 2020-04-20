@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "open": "cypress open"
+    "open": "concurrently \"cypress run\" --kill-others \"ng serve\" --success first"
   },
   "private": true,
   "dependencies": {
@@ -33,6 +33,7 @@
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
     "codelyzer": "^5.1.2",
+    "concurrently": "^5.1.0",
     "cypress": "^4.4.0",
     "jasmine-core": "~3.5.0",
     "jasmine-spec-reporter": "~4.2.1",
