@@ -12,14 +12,14 @@ pipeline {
 				}
             }
         }
-        stage('Build Angular Proyect') {
+        stage('Build Angular') {
             steps {
 				dir("FrontDemo"){
 					bat 'npm run build'
 				}
             }
         }
-		stage('Build .Net Proyect') {
+		stage('Build .Net') {
             steps {
 				dir("APIdemo"){
 					bat 'dotnet publish APIdemo.sln'
@@ -35,7 +35,11 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Deploying....'
+                bat copy "C:\Program Files (x86)\Jenkins\workspace\DemoJenkins\FrontDemo\dist\FrontDemo\*.*" "C:\inetpub\wwwroot\FrontEnd"
+				bat cd "C:\inetpub\wwwroot\Api"
+				bat %SYSTEMROOT%\System32\inetsrv\appcmd stop apppool /apppool.name:"Api"
+				bat copy "C:\Program Files (x86)\Jenkins\workspace\DemoJenkins\APIdemo\APIdemo\bin\Debug\netcoreapp3.1\publish\*.*" "C:\inetpub\wwwroot\Api"
+				bat %SYSTEMROOT%\System32\inetsrv\appcmd start apppool /apppool.name:"Api"
             }
         }
     }
