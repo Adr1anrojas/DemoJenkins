@@ -19,6 +19,13 @@ pipeline {
 				}
             }
         }
+		stage('Build .Net Proyect') {
+            steps {
+				dir("APIdemo"){
+					bat 'dotnet publish APIdemo.sln'
+				}
+            }
+        }
         stage('Cypress tests') {
             steps {
 				dir("FrontDemo"){
