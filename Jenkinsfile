@@ -15,6 +15,7 @@ pipeline {
         stage('Build Angular') {
             steps {
 				dir("FrontDemo"){
+					bat 'npm version patch'
 					bat 'npm run build'
 				}
             }
