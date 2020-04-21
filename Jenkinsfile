@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-				bat 'xcopy /E /I "C:/Program Files (x86)/Jenkins/workspace/Proyect/FrontDemo/dist/FrontDemo" "C:/inetpub/wwwroot/FrontEnd"'
+				bat 'xcopy /E /I /Y "C:/Program Files (x86)/Jenkins/workspace/Proyect/FrontDemo/dist/FrontDemo" "C:/inetpub/wwwroot/FrontEnd"'
 				bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:'Api'"
 				
 				bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:'Api'"
