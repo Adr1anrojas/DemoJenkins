@@ -41,10 +41,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'copy ${pathFilesDeployFronEnd} ${pathFilesPublishFrontEnd}'
-				bat '${stopAPI}'
-				bat 'copy ${pathFilesDeployAPI} ${pathFilesPublishAPI}'
-				bat '${startAPI}'
+                bat 'copy $pathFilesDeployFronEnd $pathFilesPublishFrontEnd'
+				bat '$stopAPI'
+				bat 'copy $pathFilesDeployAPI $pathFilesPublishAPI'
+				bat '$startAPI'
             }
         }
     }
