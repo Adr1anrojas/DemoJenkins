@@ -3,12 +3,6 @@ pipeline {
     tools {nodejs "node"}
     environment {
         CHROME_BIN = '/bin/google-chrome'
-		pathFilesDeployFronEnd = "C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/FrontDemo/dist/FrontDemo/*.*"
-		pathFilesPublishFrontEnd = "C:/inetpub/wwwroot/FrontEnd"
-		pathFilesDeployAPI = "C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/APIdemo/APIdemo/bin/Debug/netcoreapp3.1/publish/*.*"
-		pathFilesPublishAPI = "C:/inetpub/wwwroot/Api"
-		stopAPI = "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:'Api'"
-		startAPI = "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:'Api'"
     }
     stages {
         stage('Install Dependencies') {
@@ -41,10 +35,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                bat 'copy ${pathFilesDeployFronEnd} ${pathFilesPublishFrontEnd}'
-				bat '${stopAPI}'
-				bat 'copy ${pathFilesDeployAPI} ${pathFilesPublishAPI}'
-				bat '${startAPI}'
+				bat "copy 'C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/FrontDemo/dist/FrontDemo/*.*' 'C:/inetpub/wwwroot/FrontEnd'"
+				bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:'Api'"
+				bat "copy 'C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/APIdemo/APIdemo/bin/Debug/netcoreapp3.1/publish/*.*' 'C:/inetpub/wwwroot/Api'"
+				bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:'Api'"
             }
         }
     }
