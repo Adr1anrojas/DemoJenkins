@@ -2,7 +2,7 @@ pipeline {
     agent any
     tools {nodejs "node"}
     environment {
-        CHROME_BIN = '/bin/google-chrome'
+        CHROME_BIN = '\bin\google-chrome'
     }
     stages {
         stage('Install Dependencies') {
@@ -35,10 +35,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-				bat 'copy "C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/FrontDemo/dist/FrontDemo/*.*" "C:/inetpub/wwwroot/FrontEnd"'
-				bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:'Api'"
-				bat "copy 'C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/APIdemo/APIdemo/bin/Debug/netcoreapp3.1/publish/*.*' 'C:/inetpub/wwwroot/Api'"
-				bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:'Api'"
+				bat 'copy "C:\Program Files (x86)\Jenkins\workspace\DemoJenkins\FrontDemo\dist\FrontDemo\*.*" "C:\inetpub\wwwroot\FrontEnd"'
+				bat "%SYSTEMROOT%\System32\inetsrv\appcmd stop apppool \apppool.name:'Api'"
+				bat "copy 'C:\Program Files (x86)\Jenkins\workspace\DemoJenkins\APIdemo\APIdemo\bin\Debug\netcoreapp3.1\publish\*.*' 'C:\inetpub\wwwroot\Api'"
+				bat "%SYSTEMROOT%\System32\inetsrv\appcmd start apppool \apppool.name:'Api'"
             }
         }
     }
