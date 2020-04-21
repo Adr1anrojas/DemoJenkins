@@ -35,7 +35,7 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-				sh 'copy "C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/FrontDemo/dist/FrontDemo/*.*" "C:/inetpub/wwwroot/FrontEnd"'
+				bat 'copy "C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/FrontDemo/dist/FrontDemo/*.*" "C:/inetpub/wwwroot/FrontEnd"'
 				bat "%SYSTEMROOT%/System32/inetsrv/appcmd stop apppool /apppool.name:'Api'"
 				bat "copy 'C:/Program Files (x86)/Jenkins/workspace/DemoJenkins/APIdemo/APIdemo/bin/Debug/netcoreapp3.1/publish/*.*' 'C:/inetpub/wwwroot/Api'"
 				bat "%SYSTEMROOT%/System32/inetsrv/appcmd start apppool /apppool.name:'Api'"
